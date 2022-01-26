@@ -2,6 +2,7 @@ package com.decena.exam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,8 +21,9 @@ class MainActivity : AppCompatActivity(){
 
         val inventoryAdapter = InventoryAdapter(this)
         viewModel.getInput().observe(this, {
-                inventoryAdapter.mData?.add(it)
-                rvInventory.adapter = inventoryAdapter
+            Log.d("0", "$it")
+            inventoryAdapter.mData?.add(it)
+            rvInventory.adapter = inventoryAdapter
         })
 
     }

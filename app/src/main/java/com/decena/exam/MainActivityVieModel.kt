@@ -39,7 +39,7 @@ class MainActivityVieModel : ViewModel(), Observer<List<String>> {
 
         val a = sortInventory(deliveryData)
         val output: List<String> = a.toString().replace("[", "").replace("]", "").split(", ").distinct()
-        Log.d("0", "$output")
+
 
         delivery.postValue(sortInventory(receiveDelivery(output)))
     }
